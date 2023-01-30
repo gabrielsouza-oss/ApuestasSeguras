@@ -12,9 +12,9 @@ class Betfair(CasaDeApuestas):
 		CasaDeApuestas.__init__(self,self.nombre)
 		self.DATA=[]
 	
-	def buscar_partidos(self):
+	def buscar_partidos(self, url_busca):
 		self.DATA=[]
-		self.url="https://www.betfair.es/sport/tennis"
+		self.url=url_busca
 		self.respuesta=self.s.get(self.url)
 		# https://www.betstars.es/?no_redirect=1#/tennis/daily
 		# https://sports.m.bwin.es/es/sports/tenis-5
