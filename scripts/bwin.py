@@ -17,30 +17,30 @@ class Bwin(CasaDeApuestas):
 		CasaDeApuestas.__init__(self,self.nombre)
 		self.DATA=[]
 		self.headers = {
-		    'origin': 'https://sports.m.bwin.es',
+		    'origin': 'https://sports.m.bwin.com',
 		    "accept-encoding": "text/html",
 		    'accept-language': 'es-ES,es;q=0.9',
 		    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36',
 		    'content-type': 'application/json',
 		    'accept': 'application/json, text/plain, */*',
 		    'cache-control': 'no-cache',
-		    'authority': 'cds-api.bwin.es',
-		    'x-bwin-browser-url': 'https://sports.m.bwin.es/es/sports/tenis-5',
-		    'referer': 'https://sports.m.bwin.es/es/sports/tenis-5',
+		    'authority': 'cds-api.bwin.com',
+		    'x-bwin-browser-url': 'https://sports.bwin.com/pt-br/sports/tênis-5',
+		    'referer': 'https://sports.bwin.com/pt-br/sports/tênis-5',
 		}
 
 		self.params = (
 		    ('x-bwin-accessid', 'OTdhMjU3MWQtYzI5Yi00NWQ5LWFmOGEtNmFhOTJjMWVhNmRl'),
-		    ('lang', 'es'),
-		    ('country', 'ES'),
-		    ('userCountry', 'ES'),
+		    ('lang', 'pt'),
+		    ('country', 'BR'),
+		    ('userCountry', 'BR'),
 		)
 
 		self.data = '{"sportIds":"5","fixtureCategories":"Gridable,NonGridable,Other","offerMapping":"Filtered","offerCategories":"Gridable,Other","scoreboardMode":"Slim","marqueeRequest":{"marqueeData":[],"take":8},"fixtureTypes":"Standard"}'
 
 	def buscar_partidos(self):
 		self.DATA=[]
-		self.respuesta = self.s.post('https://cds-api.bwin.es/bettingoffer/lobby/sport', headers=self.headers, params=self.params, data=self.data)
+		self.respuesta = self.s.post('https://cds-api.bwin.com/bettingoffer/lobby/sport', headers=self.headers, params=self.params, data=self.data)
 		self.j=self.respuesta.json()
 		logger.debug("Status code: "+str(self.respuesta.status_code))
 
@@ -123,8 +123,6 @@ if __name__=='__main__':
 	b.guardar_html()
 	b.guardar_data_en_json()
 	b.print()
-
-
 
 
 
