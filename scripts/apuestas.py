@@ -97,16 +97,17 @@ class Apuestas():
 		#for dato in self.williamhill.DATA:
 			#self.DATA.append(Evento(dato,'williamhill'))
 		#casas=[self.betstars,self.betfair,self.bwin,self.leovegas]
+		self.DATA.append("")
 		casas=[self.betfair, self.bwin, self.leovegas]
 		for casa in casas:
 			for dato in casa.DATA:
 				# if dato.dobles: continue
 				for evento in self.DATA:
 					# print("comparo:",evento,dato)
-					#metido=evento.nuevo_dato(dato,casa.nombre)
+					metido=evento.nuevo_dato(dato,casa.nombre)
 					# print("metido:",metido)
-					#if metido: break
-				#if not metido:
+					if metido: break
+				if not metido:
 					self.DATA.append(Evento(dato,casa.nombre))
 
 	# deprecated
