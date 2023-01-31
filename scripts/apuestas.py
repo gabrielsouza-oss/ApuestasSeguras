@@ -1,8 +1,8 @@
-from . import williamhill
-from . import betstars
+#from . import williamhill
+#from . import betstars
 from . import betfair
 from . import bwin
-from . import leovegas
+#from . import leovegas
 #import telegram_bot
 
 from .utils.data_classes import Dato, Evento
