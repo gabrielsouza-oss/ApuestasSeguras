@@ -25,7 +25,7 @@ class Betstars(CasaDeApuestas):
 		self.count=30
 		t=time.gmtime()
 		self.date=str(t.tm_year)+'-'+str("%02d" % t.tm_mon)+'-'+str("%02d" % t.tm_mday)
-		self.url="https://sports.pokerstarssports.es/sportsbook/v1/api/getCompetitionsForDay?sport=TENNIS&date="+self.date+"&count="+str(self.count)+"&utcOffset=-3&locale=pt-br&channelId=18&siteId=1024"
+		self.url="https://sports.pokerstarssports.es/sportsbook/v1/api/getCompetitionsForDay?sport=TENNIS&date="+self.date+"&count="+str(self.count)+"&utcOffset=1&locale=es-es&channelId=18&siteId=1024"
 		self.respuesta=self.s.get(self.url)
 
 		self.j=self.respuesta.json()
