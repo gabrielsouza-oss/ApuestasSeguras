@@ -17,7 +17,7 @@ class Betstars(CasaDeApuestas):
 
 	def buscar_partidos(self):
 		self.DATA=[]
-		r=self.s.get("https://www.pokerstars.com/sports/in-play/tennis/2/")
+		r=self.s.get("https://www.pokerstars.com/sports/tennis/2/matches/")
 		# La variable count indica el numero de partidos que quiero en la respuesta
 		# La variable date tiene que ser de la forma yyyy-mm-dd
 		# Para la conversion de 1 a 01:
