@@ -25,7 +25,8 @@ class Apuestas():
 		self.leovegas=leovegas.Leovegas()
 		
 		self.DATA=[]
-		self.webs=['williamhill','betstars','betfair','bwin','leovegas']
+		#self.webs=['williamhill','betstars','betfair','bwin','leovegas']
+		self.webs=['betfair','bwin','leovegas']
 		self.fecha_ultima_busqueda=None
 		
 	def buscar_partidos(self, url_busca):
@@ -84,7 +85,8 @@ class Apuestas():
 
 	# para development/debug
 	def cargar_partidos(self):
-		for casa in [self.williamhill, self.betstars, self.betfair, self.bwin, self.leovegas]:
+		#for casa in [self.williamhill, self.betstars, self.betfair, self.bwin, self.leovegas]:
+		for casa in [self.betfair, self.bwin, self.leovegas]:
 			logger.info("Cargando partidos de "+casa.nombre+"...")
 			casa.cargar_data_de_json()
 		logger.debug("Datos cargados")
@@ -92,10 +94,11 @@ class Apuestas():
 	def comparar(self):
 		logger.debug("Comparando...")
 		self.DATA=[]
-		for dato in self.williamhill.DATA:
-			self.DATA.append(Evento(dato,'williamhill'))
-		casas=[self.betstars,self.betfair,self.bwin,self.leovegas]
-		#casas=[self.betfair,self.bwin]
+		#for dato in self.williamhill.DATA:
+			#self.DATA.append(Evento(dato,'williamhill'))
+			
+		#casas=[self.betstars,self.betfair,self.bwin,self.leovegas]	
+		casas=[self.betfair,self.bwin,self.leovegas]
 		for casa in casas:
 			for dato in casa.DATA:
 				# if dato.dobles: continue
@@ -125,8 +128,8 @@ class Apuestas():
 		f.close()
 
 	def guardar_html(self):
-		self.williamhill.guardar_html()
-		self.betstars.guardar_html()
+		#self.williamhill.guardar_html()
+		#self.betstars.guardar_html()
 		self.betfair.guardar_html()
 		self.bwin.guardar_html()
 		self.leovegas.guardar_html()
@@ -206,7 +209,8 @@ class Apuestas():
 			lista.append(linea)
 		df=pd.DataFrame(lista)
 		
-		orden_columnas=["Fecha","Equipo 1","Equipo 2","williamhill 1","williamhill 2","betstars 1","betstars 2","betfair 1","betfair 2","bwin 1","bwin 2","leovegas 1","leovegas 2","Esperanza","Segura","Ganancia","Conclusion"]
+		#orden_columnas=["Fecha","Equipo 1","Equipo 2","williamhill 1","williamhill 2","betstars 1","betstars 2","betfair 1","betfair 2","bwin 1","bwin 2","leovegas 1","leovegas 2","Esperanza","Segura","Ganancia","Conclusion"]
+		orden_columnas=["Fecha","Equipo 1","Equipo 2","betfair 1","betfair 2","bwin 1","bwin 2","leovegas 1","leovegas 2","Esperanza","Segura","Ganancia","Conclusion"]
 		orden_columnas=[col for col in orden_columnas if col in list(df)]
 		df=df[orden_columnas]
 		return df
@@ -219,7 +223,8 @@ class Apuestas():
 	# para development/debug
 	def buscar_jugadores_con_apellido(self,apellido):
 		resultado={}
-		for casa in [self.williamhill, self.betstars, self.betfair, self.bwin, self.leovegas]:
+		#for casa in [self.williamhill, self.betstars, self.betfair, self.bwin, self.leovegas]:
+		for casa in [self.betfair, self.bwin, self.leovegas]:
 			encontrados=[]
 			for d in casa.DATA:
 				if apellido in d.e1.j1.apellido:
