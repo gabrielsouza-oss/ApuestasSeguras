@@ -28,7 +28,7 @@ class Apuestas():
 		self.webs=['williamhill','betstars','betfair','bwin','leovegas']
 		self.fecha_ultima_busqueda=None
 		
-def buscar_partidos(self, url_busca):
+	def buscar_partidos(self, url_busca):
 		try:
 			logger.info("Buscando y parseando partidos en williamhill...")
 			self.williamhill.buscar_partidos()
