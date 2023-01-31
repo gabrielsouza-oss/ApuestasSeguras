@@ -28,7 +28,7 @@ class Apuestas():
 		self.webs=['williamhill','betstars','betfair','bwin','leovegas']
 		self.fecha_ultima_busqueda=None
 		
-	def buscar_partidos(self):
+def buscar_partidos(self, url_busca):
 		try:
 			logger.info("Buscando y parseando partidos en williamhill...")
 			self.williamhill.buscar_partidos()
@@ -52,7 +52,7 @@ class Apuestas():
 
 		try:
 			logger.info("Buscando y parseando partidos en betfair...")
-			self.betfair.buscar_partidos()
+			self.betfair.buscar_partidos(url_busca)
 			self.betfair.guardar_html()
 			logger.info("Guardando datos de betfair en /json...")
 			self.betfair.guardar_data_en_json()
