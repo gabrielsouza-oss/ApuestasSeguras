@@ -63,7 +63,7 @@ class Leovegas(CasaDeApuestas):
     
     def buscar_partidos(self):
         self.DATA=[]
-        self.respuesta = requests.post('https://www.leovegas.es/api/gql', headers=self.headers, json=self.json_data)
+        self.respuesta = requests.post('https://www.leovegas.com/api/gql', headers=self.headers, json=self.json_data)
         j=self.respuesta.json()
 
         # logger.warning("Aun no esta implementado el tema de los partidos dobles!!")
