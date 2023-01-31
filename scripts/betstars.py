@@ -25,7 +25,7 @@ class Betstars(CasaDeApuestas):
 		self.count=30
 		t=time.gmtime()
 		self.date=str(t.tm_year)+'-'+str("%02d" % t.tm_mon)+'-'+str("%02d" % t.tm_mday)
-		self.url="https://sports.pokerstarssports.es/sportsbook/v1/api/getCompetitionsForDay?sport=TENNIS&date="+self.date+"&count="+str(self.count)+"&utcOffset=1&locale=es-es&channelId=18&siteId=1024"
+		self.url="https://sports.pokerstarssports.es/sportsbook/v1/api/getCompetitionsForDay?sport=TENNIS&date="+self.date+"&count="+str(self.count)+"&utcOffset=1&locale=pt-br&channelId=18&siteId=1024"
 		self.respuesta=self.s.get(self.url)
 
 		self.j=self.respuesta.json()
@@ -39,7 +39,7 @@ class Betstars(CasaDeApuestas):
 					odds2=None
 
 					for mercado in p['markets']:
-						if mercado['name']=='Ganador del partido':
+						if mercado['name']=='Winner':
 							logger.debug("Torneo: "+str(self.j.index(torneo))+" Evento: "+str(torneo['event'].index(p))+" Odds encontradas")
 							if mercado['selection'][0]['name']==p['participants']['participant'][0]['name']:
 								odds1=mercado['selection'][0]['odds']['frac']
