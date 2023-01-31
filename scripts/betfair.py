@@ -38,8 +38,8 @@ class Betfair(CasaDeApuestas):
 				nombre1,nombre2=partido.find_all('span',{'class':'team-name'})
 				nombre1=nombre1['title']
 				nombre2=nombre2['title']
-				p1=partido.find('li',{'class':'selection sel-0'}).find('span').text.replace('\n','')
-				p2=partido.find('li',{'class':'selection sel-1'}).find('span').text.replace('\n','')
+				p1=partido.find('li',{'class':'selection sel-0 '}).find('span').text.replace('\n','')
+				p2=partido.find('li',{'class':'selection sel-1 '}).find('span').text.replace('\n','')
 				if p1==' ' or p1=='\xa0' or p2==' ' or p2=='\xa0':
 					logger.debug("Un partido no tenia datos de sus odds")
 					continue
