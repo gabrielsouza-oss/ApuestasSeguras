@@ -1,9 +1,9 @@
-#from . import williamhill
-#from . import betstars
+from . import williamhill
+from . import betstars
 from . import betfair
 from . import bwin
-#from . import leovegas
-#import telegram_bot
+from . import leovegas
+import telegram_bot
 
 from .utils.data_classes import Dato, Evento
 from .utils.logger import apuestas_logger as logger
@@ -18,11 +18,11 @@ from datetime import datetime
 
 class Apuestas():
 	def __init__(self):
-		self.williamhill=williamhill.Williamhill()
-		self.betstars=betstars.Betstars()
+		#self.williamhill=williamhill.Williamhill()
+		#self.betstars=betstars.Betstars()
 		self.betfair=betfair.Betfair()
 		self.bwin=bwin.Bwin()
-		self.leovegas=leovegas.Leovegas()
+		#self.leovegas=leovegas.Leovegas()
 		
 		self.DATA=[]
 		self.webs=['williamhill','betstars','betfair','bwin','leovegas']
