@@ -94,8 +94,8 @@ class Apuestas():
 	def comparar(self):
 		logger.debug("Comparando...")
 		self.DATA=[]
-		for dato in self.williamhill.DATA:
-			self.DATA.append(Evento(dato,'williamhill'))
+		#for dato in self.williamhill.DATA:
+			#self.DATA.append(Evento(dato,'williamhill'))
 		#casas=[self.betstars,self.betfair,self.bwin,self.leovegas]
 		casas=[self.betfair,self.bwin,self.leovegas]
 		for casa in casas:
