@@ -14,13 +14,13 @@ class Leovegas(CasaDeApuestas):
         CasaDeApuestas.__init__(self,self.nombre)
         self.DATA=[]
         self.headers = {
-            'authority': 'www.leovegas.es',
+            'authority': 'www.leovegas.com',
             'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"',
             'sec-ch-ua-mobile': '?0',
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36',
             'sec-ch-ua-platform': '"Windows"',
             'accept': '*/*',
-            'origin': 'https://www.leovegas.es',
+            'origin': 'https://www.leovegas.com',
             'sec-fetch-site': 'same-origin',
             'sec-fetch-mode': 'cors',
             'sec-fetch-dest': 'empty',
