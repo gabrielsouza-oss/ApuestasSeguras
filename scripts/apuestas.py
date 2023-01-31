@@ -18,11 +18,11 @@ from datetime import datetime
 
 class Apuestas():
 	def __init__(self):
-		#self.williamhill=williamhill.Williamhill()
-		#self.betstars=betstars.Betstars()
+		self.williamhill=williamhill.Williamhill()
+		self.betstars=betstars.Betstars()
 		self.betfair=betfair.Betfair()
 		self.bwin=bwin.Bwin()
-		#self.leovegas=leovegas.Leovegas()
+		self.leovegas=leovegas.Leovegas()
 		
 		self.DATA=[]
 		self.webs=['williamhill','betstars','betfair','bwin','leovegas']
@@ -94,7 +94,8 @@ class Apuestas():
 		self.DATA=[]
 		for dato in self.williamhill.DATA:
 			self.DATA.append(Evento(dato,'williamhill'))
-		casas=[self.betstars,self.betfair,self.bwin,self.leovegas]
+		#casas=[self.betstars,self.betfair,self.bwin,self.leovegas]
+		casas=[self.betfair,self.bwin]
 		for casa in casas:
 			for dato in casa.DATA:
 				# if dato.dobles: continue
