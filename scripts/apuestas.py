@@ -97,7 +97,7 @@ class Apuestas():
 		for dato in self.betstars.DATA:
 			self.DATA.append(Evento(dato,'betstars'))
 		#casas=[self.betstars,self.betfair,self.bwin,self.leovegas]
-		casas=[self.betstars,self.betfair,self.bwin, self.leovegas]
+		casas=[self.betfair, self.bwin, self.leovegas]
 		for casa in casas:
 			for dato in casa.DATA:
 				# if dato.dobles: continue
