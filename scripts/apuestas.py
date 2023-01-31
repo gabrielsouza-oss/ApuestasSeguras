@@ -3,7 +3,7 @@ from . import betstars
 from . import betfair
 from . import bwin
 from . import leovegas
-import telegram_bot
+#import telegram_bot
 
 from .utils.data_classes import Dato, Evento
 from .utils.logger import apuestas_logger as logger
